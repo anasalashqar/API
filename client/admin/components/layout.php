@@ -29,30 +29,7 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Prevent redirect loop if already on login page
-            const isLoginPage = window.location.href.includes('page=login');
-
-            if (!sessionStorage.getItem('sessionChecked') && !isLoginPage) {
-                fetch('http://127.0.0.1:8000/api/profile', {
-                    headers: {
-                        'Accept': 'application/json'
-                    },
-                }).then(res => {
-                    if (res.status === 401) {
-                        window.location.href = '?page=login';
-                    } else {
-                        sessionStorage.setItem('sessionChecked', 'true');
-                    }
-                }).catch(err => {
-                    console.error('API session check failed:', err);
-                });
-            }
-        });
-    </script>
-
-
+    
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->

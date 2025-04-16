@@ -75,7 +75,7 @@
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const carId = urlParams.get('id');
-    const endpoint = `API/${carId}`;
+    const endpoint = `http://127.0.0.1:8000/api/admin/cars/${carId}`;
     const form = document.getElementById('editCarForm');
 
     // Fetch existing car data
